@@ -12,6 +12,10 @@ group :assets do
 	gem 'coffee-rails', '~> 4.0.0'
 end
 
+group :development, :test do
+	gem 'rspec-rails', '~> 3.0.0.beta'
+end
+
 gem 'jquery-rails'
 
 gem 'jbuilder', '~> 1.2'
