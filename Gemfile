@@ -5,6 +5,9 @@ ruby '2.0.0'
 gem 'rails', '4.0.0'
 
 gem 'pg'
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 group :assets do 
   #gem 'sass-rails', '~> 4.0.0'
