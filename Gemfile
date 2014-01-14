@@ -6,8 +6,11 @@ gem 'rails', '4.0.0'
 
 gem 'pg'
 gem 'devise'
+gem 'json'
+gem 'koala'
 gem 'omniauth'
-gem 'omniauth-facebook'
+gem 'omniauth-facebook', '1.4.0'
+gem 'uuidtools'
 
 group :assets do 
   #gem 'sass-rails', '~> 4.0.0'
