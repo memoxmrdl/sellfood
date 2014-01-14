@@ -6,10 +6,10 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-<%= render "layouts/navbar" %>
-<div class="container">
-  <%= yield %>
-</div>
-</body>
+<body>  
+  <div class="container">
+    <%= render "layouts/navbar" %>
+    <%= yield %>
+  </div>
+</body> 
 </html>
