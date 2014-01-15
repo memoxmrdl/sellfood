@@ -1,7 +1,7 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   skip_before_filter :authenticate_user!
   
-  def all
+  def facebook
     p env["omniauth.auth"]
     user = User.from_omniauth(env["omniauth.auth"], current_user)
 
@@ -17,6 +17,4 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def failure
     super
   end
-
-  alias_method :facebook, :all
 end
