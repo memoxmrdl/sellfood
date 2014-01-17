@@ -1,8 +1,5 @@
-.container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+body {
+  font-family: 'Open Sans', sans-serif !important;
 }
 
 @media (min-width: 1024px) {
@@ -10,3 +7,14 @@
         max-width: 1024px;
     }
 }
+
+.logo {
+  font-size: x-large;
+  font-style: inherit;
+  font-weight: bold;
+}
+
+.navbar-default {
+  background-color: #d9edf7 !important;
+}
+
