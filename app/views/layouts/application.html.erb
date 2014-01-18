@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>SellFood | Donde encuentras que comer...</title>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,300|Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
@@ -8,12 +8,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body> 
-  <%= render 'layouts/navbar' %>
+<%= render 'layouts/navbar' %>
   <div class="container">
-  <%= render 'layouts/jumbotron' %>
-  <%= render 'layouts/plans' %>
-    <%= yield %>
-  <%= render 'layouts/footer' %>
+  <%= yield %>
   </div>
+<%= render 'layouts/footer' %>
 </body> 
 </html>
