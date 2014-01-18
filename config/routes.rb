@@ -1,6 +1,5 @@
 Sellfood::Application.routes.draw do
-  devise_for :users, 
-             :path => '', 
+  devise_for :users,
              :controllers => { omniauth_callbacks: "omniauth_callbacks" }
 
   root 'home#index'
