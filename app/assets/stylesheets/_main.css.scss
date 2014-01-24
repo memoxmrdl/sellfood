@@ -44,10 +44,12 @@
 }
 
 .footer {
-  background-color: #eee;
+  position: relative;
+  background-color: #2d2d2d;
   border-top: 1px solid #eee;
-  margin-top: 40px;
-  padding: 20px;
+  margin: 0;
+  padding: 15px;
+  color: #ffffff;
 }
 
 .options {
