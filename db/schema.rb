@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140114233911) do
+ActiveRecord::Schema.define(version: 20140124235523) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,11 +20,45 @@ ActiveRecord::Schema.define(version: 20140114233911) do
     t.integer  "user_id",    null: false
     t.string   "provider",   null: false
     t.string   "uid",        null: false
-    t.string   "token",      null: false
-    t.string   "secret",     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "username"
+  end
+
+  create_table "foods", force: true do |t|
+    t.string   "name",        null: false
+    t.string   "description", null: false
+    t.float    "price",       null: false
+    t.integer  "provider_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "order_details", force: true do |t|
+    t.integer  "order_id"
+    t.integer  "user_id"
+    t.integer  "food_id"
+    t.integer  "quantity"
+    t.boolean  "payment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orders", force: true do |t|
+    t.string   "name",        null: false
+    t.integer  "user_id",     null: false
+    t.integer  "provider_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "providers", force: true do |t|
+    t.string   "name",       null: false
+    t.integer  "user_id",    null: false
+    t.integer  "schedule",   null: false
+    t.string   "phone",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
