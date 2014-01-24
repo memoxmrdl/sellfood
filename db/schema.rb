@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20140114233911) do
     t.integer  "user_id",    null: false
     t.string   "provider",   null: false
     t.string   "uid",        null: false
+    t.string   "token",      null: false
+    t.string   "secret",     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "username"

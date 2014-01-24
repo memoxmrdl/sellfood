@@ -1,0 +1,55 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,300|Open+Sans+Condensed:300,700);
+
+@media (min-width: 1024px) {
+  .container{
+    max-width: 1024px;
+  }
+}
+
+.logo {
+  font-size: x-large;
+  font-style: inherit;
+  font-weight: bold;
+}
+
+.navbar-default {
+  background-color: #d9edf7 !important;
+}
+
+.jumbotron {  
+  background: url('buffet.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 30px;
+
+  h1 {
+    text-shadow: 0.1em 0.1em #333;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+  }
+
+  .shadow {
+    text-shadow: #333 0.1em 0.1em 0.2em;
+    color: white;
+  }
+}
+
+.choose {
+  font-weight: 300;
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+}
+
+.footer {
+  background-color: #eee;
+  border-top: 1px solid #eee;
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.options {
+  padding: 20px 0px;
+}
