@@ -1,5 +1,6 @@
 require 'spec_helper'
 
 describe Food do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should belong_to :provider }
+  it { should have_many :order_details }
 end

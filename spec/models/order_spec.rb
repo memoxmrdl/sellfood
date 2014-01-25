@@ -1,5 +1,8 @@
 require 'spec_helper'
 
 describe Order do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should belong_to :user }
+  it { should belong_to :provider }
+  it { should have_many :order_details }
+  it { should have_many :users }
 end
