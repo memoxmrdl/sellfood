@@ -8,7 +8,7 @@
 }
 
 .logo {
-  font-size: x-large;
+  font-size: 27px;
   font-style: inherit;
   font-weight: bold;
 }
@@ -58,7 +58,7 @@
 #hero {
   background: image-url('food.jpg') no-repeat;
   background-size: 100%;
-  min-height: 350px;
+  min-height: 400px;
   margin-top: -20px;
   opacity: 0.95;
 }
@@ -69,7 +69,11 @@
   top: 60px;
   font-weight: 100;
   color: white;
-  text-transform: uppercase;
+  text-transform: none;
   font-size: 43px;
-  letter-spacing: 2px;
+  letter-spacing: -3px;
+}
+
+#slogan a {
+  letter-spacing: normal;
 }
