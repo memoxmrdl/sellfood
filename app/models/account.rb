@@ -4,5 +4,5 @@ class Account < ActiveRecord::Base
     autosave: true
 
   has_many :users,
-    dependent: :destroy_all
+    dependent: :delete_all
 end
