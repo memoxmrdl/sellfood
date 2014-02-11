@@ -3,6 +3,17 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
 
+  def check_account_or_create
+    if current_user.present? and current_user.account.present?
+      root_url
+    else
+      after_signup_path(:setup)
+    end
+  end
+
+  def after_sign_in_path_for(user)
+    check_account_or_create
+  end
 
   protected
   def configure_permitted_parameters

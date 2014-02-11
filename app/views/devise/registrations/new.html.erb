@@ -17,13 +17,12 @@
         <div class="form-group">
           <%= f.password_field :password_confirmation, placeholder: t('.password_confirmation'), class: 'form-control' %>
         </div>
-        <%= f.submit "Sign up", class: "btn btn-primary btn-right" %> |   
+        <%= f.submit t('.sign_up'), class: "btn btn-primary btn-right" %> |   
         <%- resource_class.omniauth_providers.each do |provider| %>
           <%= link_to "Registrarme con #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider),
           class: 'btn btn-info' %>
-          <% end -%>
+        <% end -%>
         <% end %>
-        <%= %>
       </div>
     </div>
   </div>

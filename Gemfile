@@ -11,6 +11,7 @@ gem 'koala'
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
 gem 'uuidtools'
+gem 'wicked'
 
 group :assets do 
   #gem 'sass-rails', '~> 4.0.0'
