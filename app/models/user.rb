@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_one :authentication
-  belongs_to :account
+  has_one :account
+  has_one :provider, through: :account 
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable

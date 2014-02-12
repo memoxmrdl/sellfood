@@ -17,7 +17,9 @@
         <li><a href="/contacto">Contacto</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/users/sign_in">Iniciar sesión</a></li>
+        <li>
+        <%= !user_signed_in? ? link_to("Iniciar sesión", user_session_path) : link_to("Cerrar", destroy_user_session_path, method: :delete) %>
+        </li>
       </ul>
     </div>
   </div>

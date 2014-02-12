@@ -23,7 +23,6 @@
           <%= link_to "Entrar con #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider),
           class: 'btn btn-info' %>
         <% end -%>
-
         <% end %>
         <div class="text-a">
           <%= link_to t('.forgot_password'), new_password_path(resource_name) %>

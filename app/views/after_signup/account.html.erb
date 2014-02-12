@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-lg-offset-4">
+      <div class="setup-account">
+        <h3>Introduce tu nombre</h3>
+        <%= form_for @account, url: wizard_path do |f| %>
+          <div class="form-group">
+          <%= f.text_field :name, class: 'form-control', placeholder: 'Nombre completo' %>          
+          </div>
+          <%= f.submit t('.next'), class: 'btn btn-primary'  %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

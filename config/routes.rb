@@ -7,7 +7,7 @@ Sellfood::Application.routes.draw do
       :omniauth_callbacks => "omniauth_callbacks"
     }
 
-  resources :after_signup
+  resources :after_signup, only: [:show, :update]
 
   root 'home#index'
 end

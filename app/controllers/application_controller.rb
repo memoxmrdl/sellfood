@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     if current_user.present? and current_user.account.present?
       root_url
     else
-      after_signup_path(:setup)
+      after_signup_path(:account)
     end
   end
 

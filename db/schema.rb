@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20140211062041) do
 
   create_table "accounts", force: true do |t|
-    t.string   "name",       default: "", null: false
+    t.string   "name",       null: false
     t.string   "status"
     t.string   "slug"
     t.integer  "user_id"
@@ -74,13 +74,16 @@ ActiveRecord::Schema.define(version: 20140211062041) do
   end
 
   create_table "providers", force: true do |t|
-    t.string   "name",       null: false
-    t.integer  "user_id",    null: false
-    t.integer  "schedule",   null: false
-    t.string   "phone",      null: false
+    t.string   "name",        null: false
+    t.integer  "schedule"
+    t.string   "phone"
+    t.string   "description"
+    t.integer  "account_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "providers", ["account_id"], name: "index_providers_on_account_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -97,8 +100,6 @@ ActiveRecord::Schema.define(version: 20140211062041) do
     t.datetime "updated_at"
     t.string   "userame"
     t.string   "location"
-    t.integer  "status"
-    t.integer  "account_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
