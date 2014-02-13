@@ -1,15 +1,32 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-4 col-lg-offset-4">
-      <div class="setup-account">
-        <h3>Introduce tu nombre</h3>
-        <%= form_for @account, url: wizard_path do |f| %>
-          <div class="form-group">
-          <%= f.text_field :name, class: 'form-control', placeholder: 'Nombre completo' %>          
-          </div>
-          <%= f.submit t('.next'), class: 'btn btn-primary'  %>
-        <% end %>
+    <div class="col-lg-3 col-lg-offset-3">
+     <%= display_alert %>
+     <h3>Elige tu cuenta</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3 col-lg-offset-3">
+      <div class="consumer">
+        <h4>Consumidor</h4>
+        <p>Si en estos momentos estas hambriento
+        crea tu cuenta con este perfil y disfruta
+        de la comida que esta en linea de nuestros
+        provedores.
+        </p>
       </div>
+      <%= link_to content_tag(:div, "Elegir", class: 'btn btn-default'), wizard_path(:account, type: :consumer), method: :put %>
+    </div>
+    <div class="col-lg-3">
+      <div class="seller">
+        <h4>Vendedor</h4>
+        <p>Tus servicio de comida es buena
+        y necesitas aumentar tus ventas un 30%,
+        con este cuenta podras ofrecer tus servicio
+        de comida a tus usuarios !Es hora de invitarlos¡
+        </p>
+      </div>
+      <%= link_to content_tag(:div, "Elegir", class: 'btn btn-default'), wizard_path(:account, type: :seller), method: :put %>
     </div>
   </div>
 </div>

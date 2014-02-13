@@ -1,9 +1,9 @@
 module ApplicationHelper
-  def message_notice(notice)
-    content_tag(:p, notice, class: 'notice') if notice
+  def display_notice
+    content_tag(:p, flash[:notice], class: 'bg-success') if flash[:notice]
   end
 
-  def message_alert(alert)
-    content_tag(:p, alert, class: 'alert') if alert
+  def display_alert
+    content_tag(:p, flash[:alert], class: 'bg-danger') if flash[:alert]
   end
 end
