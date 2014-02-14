@@ -1,32 +1,32 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-3 col-lg-offset-3">
+    <div class="col-lg-3 col-lg-offset-2">
      <%= display_alert %>
-     <h3>Elige tu cuenta</h3>
+     <h2>Elige tu cuenta</h2>
     </div>
   </div>
   <div class="row">
-    <div class="col-lg-3 col-lg-offset-3">
+    <div class="col-lg-4 col-lg-offset-2">
       <div class="consumer">
-        <h4>Consumidor</h4>
+        <h3>Consumidor</h3>
         <p>Si en estos momentos estas hambriento
-        crea tu cuenta con este perfil y disfruta
-        de la comida que esta en linea de nuestros
-        provedores.
+        crea tu cuenta y encuentra a tu vendedor 
+        mas cercano para que disfrutes la variedad
+        de comida en nuestro sitio.
         </p>
       </div>
-      <%= link_to content_tag(:div, "Elegir", class: 'btn btn-default'), wizard_path(:account, type: :consumer), method: :put %>
+      <%= link_to content_tag(:div, "Elegir"), wizard_path(:account, type: :consumer), method: :put, class: 'btn-account' %>
     </div>
-    <div class="col-lg-3">
+    <div class="col-lg-4">
       <div class="seller">
-        <h4>Vendedor</h4>
-        <p>Tus servicio de comida es buena
+        <h3>Vendedor</h3>
+        <p>Tus servicio de comida es muy buena
         y necesitas aumentar tus ventas un 30%,
-        con este cuenta podras ofrecer tus servicio
-        de comida a tus usuarios !Es hora de invitarlos¡
+        con este cuenta podras ofrecer tus servicios
+        de comida a tus consumidores <b>!Es hora de invitarlos¡</b>
         </p>
       </div>
-      <%= link_to content_tag(:div, "Elegir", class: 'btn btn-default'), wizard_path(:account, type: :seller), method: :put %>
+      <%= link_to content_tag(:div, "Elegir"), wizard_path(:account, type: :seller), method: :put, class: 'btn-account' %>
     </div>
   </div>
 </div>

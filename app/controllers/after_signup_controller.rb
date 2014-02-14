@@ -9,14 +9,19 @@ class AfterSignupController < ApplicationController
     when :account
       @account = Account.find_or_initialize_by_user_id @user.id
 
-      if @account
-        @provider = Provider.find_or_initialize_by_account_id(@account.id)
-        return redirect_to wizard_path(:setting)
-      end
+      user_have_account_then_redirect :setting
     end
 
     case step
     when :setting
+      type_account = current_user.account.name
+
+      if  type_account.eql?('consumer')        
+        @user = User.find(@user.id)
+        @user.build_address
+      elsif type_account.eql?('seller')
+        @provider = Provider.find_or_initialize_by_account_id(current_user.account.id)
+      end          
     end
 
     case step
@@ -34,20 +39,13 @@ class AfterSignupController < ApplicationController
       type = params[:type]
 
       if type.include?('consumer') || type.include?('seller')
-        @account = Account.find_or_initialize_by_user_id @user.id
-
-        if @account
-          @provider = Provider.find_or_initialize_by_account_id(@account.id)
-          return redirect_to wizard_path(:setting)
-        end
-        
+        user_have_account_then_redirect :setting
+        @account = Account.find_or_initialize_by_user_id @user.id     
         @account.name = type
 
         if @account.save
           @user.account = @account
-          @user.save!
-          
-          @provider = Provider.find_or_initialize_by_account_id(@account.id)
+          @user.save          
           redirect_to wizard_path :setting
         else
           redirect_to wizard_path(:account), alert: 'Hubo problemas al crear la cuenta'
@@ -64,5 +62,10 @@ class AfterSignupController < ApplicationController
     case step
     when :billing
     end
+  end
+
+  private
+  def user_have_account_then_redirect(step)
+    return jump_to(step) if current_user.account.present?
   end
 end

@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def check_account_or_create
-    if current_user.present? and current_user.account.present?
+    if current_user.present? and current_user.account.present? and current_user.account.provider.present?
       root_url
     else
       after_signup_path(:account)

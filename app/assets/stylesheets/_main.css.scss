@@ -92,14 +92,50 @@
 
 .consumer {
   background-color: #d68a37;
-  padding: 20px;
-  font-weight: 300;
-  text-align: justify;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  
+  h3 {
+    color: white;
+    font-weight: 300;
+    background-color: #333;
+    padding: 20px;
+  }
+
+  p {
+    background-color: #d9edf7;
+    padding: 20px;
+    font-size: 20px;
+    margin-bottom: 0;
+  }
 }
 
 .seller {
   background-color: #48a7da;
-  padding: 20px;
-  font-weight: 300;
-  text-align: justify;
+  
+  h3 {
+    color: white;
+    font-weight: 300;
+    background-color: #333;
+    padding: 20px;
+  }
+
+  p {
+    background-color: #d9edf7;
+    padding: 20px;
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+}
+
+.btn-account {
+  div {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+  }
 }

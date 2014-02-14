@@ -7,8 +7,12 @@ class CreateAddresses < ActiveRecord::Migration
     t.string   :country
     t.string   :zip_code
     t.integer  :provider_id
+    t.integer  :user_id
 
       t.timestamps
     end
+
+    add_index :addresses, :provider_id
+    add_index :addresses, :user_id
   end
 end
